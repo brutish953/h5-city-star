@@ -37,8 +37,7 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             scrollbar-width: none;
-            background: #0a2490;
-        }
+            background: #0a2490;        }
         .page::-webkit-scrollbar {
             display: none;
         }
@@ -59,7 +58,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.1));
+            background: linear-gradient(135deg, rgba(12,38,150,0.1), rgba(12,38,150,0.1));
             z-index: 1;
         }
         .page1-content {
@@ -75,7 +74,7 @@
             color: #fff;
             padding: 20px;
         }
-        .page2, .page3, .page4, .page5, .page6, .page7 , .page8{
+        .page2, .page3, .page4, .page5, .page6, .page7 , .page8, .page9 , .page10, .page11 , .page12{
             background: url("images/indexbg.jpg") center top / cover no-repeat !important;
             background-size: 100% 100% !important;
         }
@@ -87,18 +86,27 @@
             transform: translateY(30px);
             animation: fadeUp 1s 0.3s forwards;
             text-shadow: 0 0 5px #123775, 0 0 5px #123775, 5px 5px 10px rgba(18,55,117,0.1);
-            padding-top: 4rem;
+			margin-top: -17rem;
         }
         .title-sub {
-            font-size: 1.4rem;
-            margin-bottom: 60px;
-            opacity: 0;
-            transform: translateY(30px);
-            animation: fadeUp 1s 0.8s forwards;
-            text-shadow: 0 0 4px #000;
-        }
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    opacity: 0;
+    letter-spacing: 2px;
+    transform: translateY(30px);
+    animation: fadeUp 1s 0.8s forwards;
+    /* 渐变方向改为从上到下：顶部纯白 → 底部亮蓝 */
+    background: linear-gradient(to bottom, #ffffff, #0084ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    /* 保留你原来的描边阴影，增强在蓝色背景上的对比度 */
+     filter: drop-shadow(0 0 8px #001158);
+}
+		
         .title-bottom {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
+			letter-spacing: 2px;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeUp 1s 1.3s forwards;
@@ -106,7 +114,7 @@
         }
         .scroll-tip {
             position: absolute;
-            bottom: 20px;
+            bottom: 3rem	;
             left: 50%;
             transform: translateX(-50%);
             font-size: 0.9rem;
@@ -121,7 +129,7 @@
             50% { transform:translateX(-50%) translateY(8px); }
         }
         .ppt-page {
-            padding: 3rem 20px 20px 20px;
+            padding: 3rem 10% 20px 10%;
             color: #fff;
         }
         .section-title-bar {
@@ -177,7 +185,7 @@
         .four-card {
             background: linear-gradient(180deg, rgba(0,102,255,0.7), rgba(0,51,153,0.7));
             border-radius: 12px;
-            padding: 20px;
+            padding: 30px 20px 30px 20px;
             border: 2px solid rgba(255,255,255,0.3);
         }
         .four-card h5 {
@@ -185,6 +193,7 @@
             color: #36e88a;
             margin-bottom: 15px;
             text-align:left;
+			line-height:1.6rem
         }
         .timeline-item {
             margin: 30px 15px;
@@ -273,13 +282,16 @@
             height: 12px;
             border-radius: 50%;
             background: #36b8ff;
-            margin: -7px auto 0;
+            margin: -26px auto 0;
         }
         .road-card {
             background: linear-gradient(180deg, rgba(22,115,255,0.7), rgba(0,51,153,0.7));
             border-radius: 12px;
             padding: 15px;
             margin-bottom: 12px;
+			display: flex;
+  align-items: flex-start; /* 顶部对齐 */
+  gap: 16px; /* 图片和文字之间的间距 */
         }
         .road-card h4 {
             color: #36e88a;
@@ -290,25 +302,23 @@
             font-size: 0.85rem;
             line-height: 1.6;
         }
-		
-		.sdbg1{background-image: url("images/1.jpg"); background-repeat: no-repeat; background-size: cover;}
-		.sdbg2{background-image: url("images/2.jpg"); background-repeat: no-repeat; background-size: cover;}
-		.sdbg3{background-image: url("images/3.jpg"); background-repeat: no-repeat; background-size: cover;}
-		.sdbg4{background-image: url("images/4.jpg"); background-repeat: no-repeat; background-size: cover;}
-		.sdbg5{background-image: url("images/5.jpg"); background-repeat: no-repeat; background-size: cover;}
-		.sdbg6{background-image: url("images/6.jpg"); background-repeat: no-repeat; background-size: cover;}
-		.sdbg7{background-image: url("images/7.jpg"); background-repeat: no-repeat; background-size: cover;}
-		.sdbg8{background-image: url("images/8.jpg"); background-repeat: no-repeat; background-size: cover;}
+
+		.sdbg img{width: 40%; /* 图片宽度，可根据需要调整 */
+  max-width: 160px; /* 限制最大宽度 */
+  height: auto; /* 保持图片比例 */
+  border-radius: 8px; /* 可选，给图片加圆角 */
+  object-fit: cover;}
+
     </style>
 </head>
 <body>
 <div class="h5-container" id="h5Container">
     <div class="page page1 active">
         <div class="page1-content">
-            <h5 class="title-main">2026城市之星</h5>
-            <p class="title-sub">上海城市治理青年人才创新大赛</p>
-            <p class="title-bottom">—— 建设现代化人民城市 ——</p>
-            <p class="scroll-tip">↓ 下滑查看详情 ↓</p>
+            <p class="title-main"><img src="images/logo.png"></p>
+            <h5 class="title-sub">2026城市之星</h5>
+            <p class="title-bottom">上海城市治理青年人才创新大赛</p>
+            <p class="scroll-tip"><img src="images/bottom.png"></p>
         </div>
     </div>
 
@@ -319,9 +329,9 @@
         <div class="divider-line"></div>
         <div class="divider-dot"></div>
         <div class="text-block" style="margin-top: 20px;">
-            <p style="font-size: 1rem; margin-bottom: 15px;">各相关单位：</p>
-            <p style="font-size: 0.9rem; line-height: 1.8;">
-为全面贯彻落实党的二十大精神和习近平总书记考察上海重要讲话精神，进一步提升上海建设交通行业人才工作水平，市建设交通工作党委面向本市城市治理领域青年英才，组织举办2026“城市之星—上海城市治理青年人才创新大赛”(以下简称“大赛”)，主要围绕上海人民城市建设、超大城市治理等任务要求，大力推进制度创新、技术创新、管理创新和服务创新，发现和培养一批城市治理青年英才，挖掘和储备一批城市治理创新项目。现将有关事项通知如下:
+            <p style="font-size: 1.2rem; margin-bottom: 15px;">各相关单位：</p>
+            <p style="font-size: 1.1rem; line-height: 1.8;">
+为全面贯彻落实党的二十大精神和习近平总书记考察上海重要讲话精神，进一步提升上海建设交通行业人才工作水平，市建设交通工作党委面向本市城市治理领域青年英才，组织举办 2026“城市之星—上海城市治理青年人才创新大赛”(以下简称“大赛”),主要围绕上海人民城市建设、超大城市治理等任务要求，大力推进制度创新、技术创新、管理创新和服务创新，发现和培养一批城市治理青年英才，挖掘和储备一批城市治理创新项目。现将有关事项通知如下:
             </p>
         </div>
     </div>
@@ -332,23 +342,21 @@
 
         <div class="section-title-bar">参赛对象</div>
         <div class="text-block">
-            <p style="font-size:0.9rem; line-height:1.8;">
-本市行政区域内具有独立法人资格的企事业单位、社会组织等机构中从事城市治理相关工作的在职人员，年龄一般在45周岁以下，在城市治理某一专业领域具有扎实的专业理论基础或实践能力并取得一定成绩，具有较好的发展潜质，每人可选择一个赛道参赛。
-            </p>
+            <p style="font-size:0.9rem; line-height:1.6;">
+本市行政区域内具有独立法人资格的企事业单位、社会组织等机构中从事城市治理相关工作的在职人员，年龄一般在45周岁以下，在城市治理某一专业领域具有扎实的专业理论基础或实践能力并取得一定成绩，具有较好的发展潜质，每人可选择一个赛道参赛。            </p>
         </div>
 
         <div class="section-title-bar">比赛内容</div>
         <div class="text-block">
-            <p style="font-size:0.9rem; line-height:1.8; margin-bottom:8px;"><strong>（一）赛道分布</strong></p>
-            <p style="font-size:0.9rem; line-height:1.8;">
-大赛设8个分赛道，每个分赛道由相关单位承办，融合资源、整合力量、聚合智慧，突出主管部门引导、系统支持和行业参与相结合，构建引导协调、系统和行业单位承办协办、企事业单位和行业人才广泛参与的运行机制。
+            <p style="font-size:0.9rem; line-height:1.5; margin-bottom:8px;"><strong>（一）赛道分布</strong></p>
+            <p style="font-size:0.9rem; line-height:1.5;">
+大赛设 8 个分赛道，每个分赛道由相关单位承办，融合资源、整合力量、聚合智慧，突出主管部门引导、系统支持和行业参与相结合，构建引导协调、系统和行业单位承办协办、企事业单位和行业人才广泛参与的运行机制。
             </p>
-            <p style="font-size:0.9rem; line-height:1.8; margin-top:12px;"><strong>（二）大赛形式</strong></p>
-            <p style="font-size:0.9rem; line-height:1.8;">
-综合采用TED演讲、项目路演、论坛、辩论等方式开展创新大赛，围绕各赛道主题，采用选手讲演、专家点评、综合排名方式开展比赛。
-            </p>
-            <p style="font-size:0.9rem; line-height:1.8; margin-top:12px;"><strong>（三）决赛安排</strong></p>
-            <p style="font-size:0.9rem; line-height:1.8;">
+            <p style="font-size:0.9rem; line-height:1.5; margin-top:10px;"><strong>（二）大赛形式</strong></p>
+            <p style="font-size:0.9rem; line-height:1.5;">
+              综合采用 TED 演讲、项目路演、论坛、辩论等方式开展创新大赛，围绕各赛道主题，采用选手讲演、专家点评、综合排名方式开展比赛。            </p>
+            <p style="font-size:0.9rem; line-height:1.5; margin-top:10px;"><strong>（三）决赛安排</strong></p>
+            <p style="font-size:0.9rem; line-height:1.5;">
 组织各分赛道一等奖选手参加总决赛，最终决出大赛金、银、铜奖若干名。
             </p>
         </div>
@@ -357,19 +365,19 @@
     <div class="page page4 ppt-page">
         <div class="section-title-bar">时间安排</div>
         <div class="timeline-item">
-            <h5>（一）申报阶段（4月20日-5月20日）</h5>
+            <h5>申报阶段（4/20-5/20）</h5>
             <p style="font-size:0.9rem; line-height:1.8;">
-各类申报人选经所在单位党组织审核确认后，通过“海聚英才云”人才服务数字平台进行统一申报（登录地址：https://shrctcpt.sh-italent.cn/declare/#/），每个法人单位在各分赛道申报不超过2名。各集团加强对所属子公司申报人员的统筹把关。组委会对所推报材料进行审核后，产生符合条件的候选人名单。
+各类申报人选经所在单位审核确认后，通过“海聚英才云 ”人才服务 数 字 平 台 进行统一 申 报 （ 登录地址 ：https://shrctcpt.sh-italent.cn/declare/#/），每个法人单位在各分赛道申报不超过 2 名。各集团加强对所属子公司申报人员的统筹把关。组委会对所推报材料进行审核后，产生符合条件的候选人名单。
             </p>
         </div>
         <div class="timeline-item">
-            <h5>（二）审核阶段（5月20日-6月1日）</h5>
+            <h5>审核阶段（5/20-6/1）</h5>
             <p style="font-size:0.9rem; line-height:1.8;">
 由分赛道组委会按照比赛要求对报名人选进行初选审核，重点对报名人选基本条件、发展潜力、创新项目等进行综合考量，选出比赛正式候选人。
             </p>
         </div>
         <div class="timeline-item">
-            <h5>（三）比赛阶段（5月29日-8月17日）</h5>
+            <h5>比赛阶段（5/29-8/17）</h5>
             <p style="font-size:0.9rem; line-height:1.8;">
 由各分赛道组委会举行分赛道比赛，评选出各分赛道一等奖、二等奖、三等奖和优胜奖各若干名。各分赛道获得一等奖的选手可参加总决赛，最终决出创新大赛金、银、铜奖若干名。
             </p>
@@ -378,87 +386,129 @@
 
     <div class="page page5 ppt-page">
         <div class="section-title-bar">激励措施</div>
-        <div class="four-card" style="margin-bottom:12px;">
-            <h5>（一）政治引领和政治吸纳重点关注</h5>
-            <p style="font-size:0.9rem; line-height:1.7;">
+        <div class="four-card" style="margin-bottom:20px;">
+            <h5>（一）在政治引领和政治吸纳方面予以重点关注</h5>
+            <p style="font-size:1rem; line-height:1.7;">
 所有参赛获奖青年可申请加入上海建设交通青年人才协会。加大在参赛获奖青年中发展党员、推荐代表、选拔干部等工作力度，优先推荐参赛获奖青年参与各类先进荣誉及奖项评选。
             </p>
         </div>
-        <div class="four-card" style="margin-bottom:12px;">
-            <h5>（二）专业培养和事业支持倾斜</h5>
-            <p style="font-size:0.9rem; line-height:1.7;">
-优先推荐参赛青年参加各类高级研修班等重点培训项目。优先推荐参赛获奖青年进入行业各院士或大师专家工作室开展带教培养。所有参赛获奖青年展示的项目或方案纳入大赛项目库，优先供相关主管部门参考，作为重点项目予以支持。
-            </p>
+        <div class="four-card" >
+            <h5>（二）在专业培养和事业支持方面予以保障倾斜</h5>
+            <p style="font-size:1rem; line-height:1.7;">
+优先推荐参赛青年参加各类高级研修班等重点培训项目。优先推荐参赛获奖青年进入行业各院士或大师专家工作室开展带教培养。所有参赛获奖青年展示的项目或方案纳入大赛项目库，优先供相关主管部门参考，作为重点项目予以支持。            </p>
         </div>
-        <div class="four-card" style="margin-bottom:12px;">
-            <h5>（三）人才计划与创新创业大赛优先推荐</h5>
-            <p style="font-size:0.9rem; line-height:1.7;">
-在大赛总决赛中获奖的青年可直接入选东方英才计划城市治理领域青年项目终评，金奖优先推荐。各分赛道优秀人才及项目，择优推荐参加“海聚英才”全球创新创业大赛、上海（长三角）中青年工程师创新创业大赛。
+    </div>    
+    
+    
+    <div class="page page6 ppt-page">   
+        <div class="four-card" style="margin-bottom:20px;">
+            <h5>（三）在人才计划评选和市级大赛方面予以优先推荐</h5>
+            <p style="font-size:1rem; line-height:1.7;">
+在大赛总决赛中表现突出的青年可直接入选东方英才计划城市治理领域青年项目终评。在各分赛道中表现优异的青年人才及项目，择优推荐参加“海聚英才”全球创新创业大赛复赛和上海（长三角）中青年工程师创新创业大赛并享受相关政策支持。
             </p>
         </div>
         <div class="four-card">
-            <h5>（四）落户、职称、住房优质服务</h5>
-            <p style="font-size:0.9rem; line-height:1.7;">
+            <h5>（四）在引进落户、职称评定、住房安居等方面提供优质服务</h5>
+            <p style="font-size:1rem; line-height:1.7;">
 所有参赛获奖青年人才可享受落户直通车（居住证、落户）、行业职称申报优先推荐、市区两级人才公寓优先申请入住等综合配套服务。
             </p>
         </div>
     </div>
 
-    <div class="page page6 ppt-page">
+    <div class="page page7 ppt-page">
         <div class="section-title-bar">工作要求</div>
         <div class="timeline-item">
-            <h5>（一）加强组织领导，广泛宣传发动</h5>
+            <h5>1.加强组织领导，广泛宣传发动</h5>
             <p style="font-size:0.9rem; line-height:1.8;">
 发挥大赛组委会统一领导作用，加强各分赛道比赛部署和指导，各分赛道承办单位要精心筹划、严密组织，高质量完成比赛活动。积极开展大赛宣传活动，加大线上、线下各类媒介推送力度，加强政策解读、比赛推广和人才宣传，确保大赛有序、平稳、安全进行。
             </p>
         </div>
         <div class="timeline-item">
-            <h5>（二）加强人才选树，储备优秀项目</h5>
+            <h5>2.加强人才选树，储备优秀项目</h5>
             <p style="font-size:0.9rem; line-height:1.8;">
 将大赛相关活动纳入行业各级团委“号、手、队、岗、赛”五位一体的岗位建功青春行动，增强通过比赛选拔优秀人才、树立先进典型的工作意识，以大赛为平台和抓手，充分挖掘选拔一批优秀人才、树立一批行业典型、储备一批创新项目。
             </p>
         </div>
         <div class="timeline-item">
-            <h5>（三）加强综合培养，注重能力提升</h5>
+            <h5>3.加强综合培养，注重能力提升</h5>
             <p style="font-size:0.9rem; line-height:1.8;">
 把大赛打造成面向行业青年人才长期开展的特色品牌活动，将赛事选拔与人才培养相结合，为青年人才提供一揽子培养政策和举措，建立长期跟踪培养和管理机制，助力青年人才成长发展。
             </p>
         </div>
     </div>
 
-    <div class="page page7 ppt-page">
+    <div class="page page8 ppt-page">
         <div class="section-title-bar">分赛道简介</div>
-        <div class="road-card sdbg1"><h4>1.城市更新</h4>
-			<p><strong>主要内容：</strong>聚焦深化城市更新行动，全面践行人民城市理念，加快转变超大城市发展方式，优化空间布局、改善人居环境、增强安全韧性、激发城市活力，促进城市内涵式发展和品质提升。<br><br>
-              <strong> 承办单位：</strong>上海市住房和城乡建设管理委员会、上海市房屋管理局、上海市房地产科学研究院、上海地产(集团)有限公司<br>
-          <strong>联系人：</strong>龙老师  联系电话：23116105 </p></div>
-        <div class="road-card sdbg2"><h4>2.交通航运</h4><p>
-			<strong>主要内容：</strong>聚焦加快建设全球领先的国际航运中心，巩固提升辐射全球的海空枢纽港地位，深化区域港航合作，高水平推进国际航空枢纽建设，推进交通领域数字化、智能化、绿色化转型。<br><br>
-            <strong>承办单位：</strong>上海市交通委员会<br>
-            <strong>联系人：</strong>张老师  联系电话：23115113 </p></div>
-        <div class="road-card sdbg3"><h4>3.治水管海</h4><p><strong>主要内容：</strong>聚焦城市水安全、水生态、水资源、水环境和海洋综合管理，着力构建安全韧性、优质集约、绿色低碳、智慧高效的现代水系统治理体系，推进现代海洋城市建设，不断提升行业智能化、绿色化、融合化发展水平。<br><br>
-            <strong>承办单位：</strong>上海市水务局（上海市海洋局）<br>
-            <strong>联系人：</strong>马老师、王老师  联系电话：66614560-2061、66614560-6066</p></div>
-        <div class="road-card sdbg4"><h4>4.品质绿容</h4><p><strong>主要内容：</strong>聚焦人工智能赋能绿化市容智慧管理，推进绿色技术革新与循环经济发展，强化生态韧性构建与碳汇评估转化，深化共建共治推动绿容治理现代化，持续提升生态环境品质与行业服务能级。<br>
-            <strong>承办单位：</strong>上海市绿化和市容管理局（上海市林业局）<br><br>
-            <strong>联系人：</strong>胡老师、蒋老师  联系电话：52567075、52567701</p></div>
-        <div class="road-card sdbg5"><h4>5.智能建造</h4><p><strong>主要内容：</strong>聚焦人工智能在建设领域的应用，推进数字盾构、智慧运营、建筑机器人、数字化建造技术及智慧工地建设。加强高技能人才选育，培养储备“建交工匠”。<br>
-            <strong>承办单位：</strong>上海建工集团股份有限公司、上海隧道工程股份有限公司<br>
-            <strong>联系人：</strong>陆老师、孙老师   联系电话：53578808、55885959-8193</p></div>
-        <div class="road-card sdbg6"><h4>6.韧性安全</h4><p><strong>主要内容：</strong>聚焦城市安全风险、工程安全质量、防灾减灾等，推进海绵城市、城市基础设施生命线安全工程和城市运行保障应急管理体系建设，增强城市运行安全保障和抗风险能力，加快建设宜居、韧性、智慧城市。<br><br>
-            <strong>承办单位：</strong>上海城投（集团）有限公司<br>
-            <strong>联系人：</strong>赵老师  联系电话：64338222-3381</p></div>
-        <div class="road-card sdbg7"><h4>7.绿色低碳</h4><p><strong>主要内容：</strong>聚焦绿色低碳发展理念，推进超低能耗建筑、可再生能源建筑一体化、储能、建筑高效电气化替代等关键技术创新和规模化应用。推进低碳零碳负碳核心技术攻关和基础研究。<br><br>
-            <strong>承办单位：</strong>上海市绿色建筑协会<br>
-            <strong>联系人：</strong>薛老师   联系电话：64083368</p></div>
-		
-        <div class="road-card sdbg8"><h4>8.精细化管理</h4><p><strong>主要内容：</strong>按照城市管理应该像绣花一样精细的要求，聚焦城市精细化管理、物业治理、城管执法等领域，加强统筹协调、服务管理和管执联动，提升超大城市管理科学化、精细化、智能化、法治化水平。<br><br>
-            <strong>承办单位：</strong>上海市城市管理行政执法局<br>
-            <strong>联系人：</strong>林老师  联系电话：63316800 </p></div>
+        <div class="road-card sdbg">
+             <img src="images/1.jpg">
+             <div class="road-text"> 
+             <h4>1.城市更新</h4>
+             <p><strong>主要内容：</strong>聚焦深化城市更新行动，全面践行人民城市理念，加快转变超大城市发展方式，优化空间布局、改善人居环境、增强安全韧性、激发城市活力，促进城市内涵式发展和品质提升。</p>
+             </div>
+        </div>
+        
+        <div class="road-card sdbg">
+             <img src="images/2.jpg"> 
+             <div class="road-text">
+             <h4>2.交通航运</h4>
+             <p><strong>主要内容：</strong>聚焦加快建设全球领先的国际航运中心，巩固提升辐射全球的海空枢纽港地位，深化区域港航合作，高水平推进国际航空枢纽建设，推进交通领域数字化、智能化、绿色化转型。</p>
+            </div> 
+        </div>
+        <div class="road-card sdbg">
+             <img src="images/3.jpg"> 
+             <div class="road-text">
+             <h4>3.治水管海</h4>
+            <p><strong>主要内容：</strong>聚焦城市水安全、水生态、水资源、水环境和海洋综合管理，着力构建安全韧性、优质集约、绿色低碳、智慧高效的现代水系统治理体系，推进现代海洋城市建设，不断提升行业智能化、绿色化、融合化发展水平。
+            </p> 
+            </div>
+        </div>
+        <div class="road-card sdbg">
+             <img src="images/4.jpg">
+             <div class="road-text"> 
+             <h4>4.品质绿容</h4>
+            <p><strong>主要内容：</strong>聚焦人工智能赋能绿化市容智慧管理，推进绿色技术革新与循环经济发展，强化生态韧性构建与碳汇评估转化，深化共建共治推动绿容治理现代化，持续提升生态环境品质与行业服务能级。
+            </p> 
+            </div>
+        </div>
+     </div>
+     
+     
+     <div class="page page9 ppt-page">       
+        <div class="road-card sdbg">
+             <img src="images/5.jpg"> 
+             <div class="road-text">
+             <h4>5.智能建造</h4>
+            <p><strong>主要内容：</strong>聚焦人工智能在建设领域的应用，推进数字盾构、智慧运营、建筑机器人、数字化建造技术及智慧工地建设。加强高技能人才选育，培养储备“建交工匠”。
+            </p> 
+            </div>
+        </div>
+        <div class="road-card sdbg">
+             <img src="images/6.jpg">
+             <div class="road-text"> 
+             <h4>6.韧性安全</h4>
+            <p><strong>主要内容：</strong>聚焦城市安全风险、工程安全质量、防灾减灾等，推进海绵城市、城市基础设施生命线安全工程和城市运行保障应急管理体系建设，增强城市运行安全保障和抗风险能力，加快建设宜居、韧性、智慧城市。
+            </p> 
+            </div>
+        </div>
+        <div class="road-card sdbg">
+             <img src="images/7.jpg"> 
+             <div class="road-text">
+             <h4>7.绿色低碳</h4>
+            <p><strong>主要内容：</strong>聚焦绿色低碳发展理念，推进超低能耗建筑、可再生能源建筑一体化、储能、建筑高效电气化替代等关键技术创新和规模化应用。推进低碳零碳负碳核心技术攻关和基础研究。
+            </p> 
+            </div>
+        </div>
+        <div class="road-card sdbg">
+             <img src="images/8.jpg"> 
+             <div class="road-text">
+             <h4>8.精细化管理</h4>
+            <p><strong>主要内容：</strong>按照城市管理应该像绣花一样精细的要求，聚焦城市精细化管理、物业治理、城管执法等领域，加强统筹协调、服务管理和管执联动，提升超大城市管理科学化、精细化、智能化、法治化水平。
+            </p> 
+            </div>        </div>
 
 	</div>
 		
-<div class="page page8 ppt-page">		
+<div class="page page10 ppt-page">		
         <div class="contact-footer" style="margin-top:25px;">
             <div class="contact-info">
                 <p>联系人：卜老师、门老师</p>
