@@ -112,22 +112,31 @@
             animation: fadeUp 1s 1.3s forwards;
             text-shadow: 0 0 4px #000;
         }
-        .scroll-tip {
-            position: absolute;
-            bottom: 3rem	;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 0.9rem;
-            opacity: 0.7;
-            animation: bounce 1.5s infinite;
-        }
+
+		
+.scroll-tip {
+    position: absolute;
+    bottom: 3rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0.7;
+    animation: bounce 1.5s infinite alternate ease-in-out;
+}
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(8px); }
+}
+.scroll-tip img {
+    display: inline-block;
+    margin: 0 auto;
+}
+		
         @keyframes fadeUp {
             to { opacity:1; transform:translateY(0) }
         }
-        @keyframes bounce {
-            0%,100% { transform:translateX(-50%) translateY(0); }
-            50% { transform:translateX(-50%) translateY(8px); }
-        }
+
         .ppt-page {
             padding: 3rem 10% 20px 10%;
             color: #fff;
